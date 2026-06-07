@@ -60,24 +60,8 @@ $primaryColor: #146ef5;
 					}
 				}
 
-				&.bellowImage {
-					p {
-						width: 100%;
-					}
-				}
-
 				p {
 					margin: 0;
-				}
-			}
-
-			&.bellowImageCaption {
-				// padding-bottom: 26px;
-				display: flex;
-				flex-direction: column;
-
-				.image {
-					flex: 1;
 				}
 			}
 		}
@@ -95,7 +79,7 @@ $primaryColor: #146ef5;
 
 			.carouselItem {
 				width: 100%;
-				display: inline-block;
+				display: inline-flex;
 
 				.image {
 					justify-content: center;

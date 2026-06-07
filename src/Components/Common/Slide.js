@@ -1,4 +1,4 @@
-import { forwardRef, useRef, useEffect, useState } from 'react';
+import { forwardRef, useRef } from 'react';
 
 import { sanitizeHTML } from '../../../../bpl-tools/utils/common';
 
@@ -6,9 +6,14 @@ const Slide = (props) => {
 	const { attributes, carousel, index, ...restProps } = props;
 	const { elements = { linkNewTab: false, linkOn: 'image' }, caption: attrCap = {} } = attributes;
 	const { position: capPos = 'onImage' } = attrCap;
-	const { action = 'none', link = '' } = carousel;
+	const { image, action = 'none', link = '' } = carousel;
+	const { url = '' } = image || {};
 
-	const className = `carouselItem carouselItem-${index} ${'bellowImage' === capPos ? 'bellowImageCaption' : ''}`;
+	const className = `carouselItem carouselItem-${index}`;
+
+	if (!url) {
+		return null;
+	}
 
 	return ('link' === action && link && 'image' === elements?.linkOn && 'onImage' === capPos) ?
 		<a className={className} href={link} target={elements?.linkNewTab ? '_blank' : '_self'} rel='noreferrer' {...restProps}>
@@ -21,29 +26,16 @@ const Slide = (props) => {
 export default Slide;
 
 const SlideItem = ({ attributes, carousel }) => {
-	const { elements = { linkNewTab: false, linkOn: 'image' }, caption: attrCap = {} } = attributes;
-	const { position: capPos = 'onImage' } = attrCap;
+	const { elements = { linkNewTab: false, linkOn: 'image' } } = attributes;
 	const { image, action = 'none', link = '' } = carousel;
 
 	const captionRef = useRef(null);
-	const [captionHeight, setCaptionHeight] = useState(0);
 
 	const linkProps = { linkNewTab: elements?.linkNewTab, action, link };
 
-	useEffect(() => {
-		if (captionRef.current && 'bellowImage' === capPos) {
-			const height = captionRef.current.offsetHeight;
-			setCaptionHeight(height);
-		}
-	}, [capPos]);
-
-	const figureStyle = 'bellowImage' === capPos && captionHeight > 0
-		? { height: `calc(100% - ${captionHeight}px)` }
-		: {};
-
 	return <>
-		<figure className='image' style={figureStyle}>
-			{'image' === elements?.linkOn && 'bellowImage' === capPos ?
+		<figure className='image'>
+			{'image' === elements?.linkOn ?
 				<LinkEl {...linkProps}>
 					<ImageEl image={image} />
 				</LinkEl> :

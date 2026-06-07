@@ -27,17 +27,7 @@ export const effects = [
 ];
 export const capDisplays = [
 	{ label: __('None', 'b-carousel-block'), value: 'none' },
-	{ label: __('Normal', 'b-carousel-block'), value: 'normal' },
-	{ label: __('Hover', 'b-carousel-block'), value: 'hover' }
-];
-export const capPositions = [
-	{ label: __('On Image', 'b-carousel-block'), value: 'onImage' },
-	{ label: __('Bellow Image', 'b-carousel-block'), value: 'bellowImage' }
-];
-export const verticalPositions = [
-	{ label: __('Top', 'b-carousel-block'), value: 'top' },
-	{ label: __('Center', 'b-carousel-block'), value: 'center' },
-	{ label: __('Bottom', 'b-carousel-block'), value: 'bottom' }
+	{ label: __('Normal', 'b-carousel-block'), value: 'normal' }
 ];
 export const aligns = [
 	{ label: __('Left', 'b-carousel-block'), value: 'left', icon: 'editor-alignleft' },

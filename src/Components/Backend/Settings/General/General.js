@@ -65,13 +65,13 @@ const General = ({ attributes, setAttributes, activeIndex, setActiveIndex, updat
 
 
 		<PanelBody title={__('Caption', 'b-carousel-block')} {...panelBodyIF}>
-			<SelectControl label={__('Display', 'b-carousel-block')} labelPosition='left' value={display} onChange={val => setAttributes({ caption: { ...caption, display: val } })} options={capDisplays.filter(o => o.value !== 'hover')} />
+			<SelectControl label={__('Display', 'b-carousel-block')} labelPosition='left' value={display} onChange={val => setAttributes({ caption: { ...caption, display: val } })} options={capDisplays} />
 			<small>{__('Hover view will work only if the caption position is on the image.', 'b-carousel-block')}</small>
 
-			<PanelRow className='mt20'>
+			{'none' !== display && <PanelRow className='mt20'>
 				<Label className=''>{__('Text Align:', 'b-carousel-block')}</Label>
 				<BtnGroup value={textAlign} onChange={val => setAttributes({ caption: { ...caption, textAlign: val } })} options={aligns} isIcon={true} />
-			</PanelRow>
+			</PanelRow>}
 
 			<Notice status='premium' isIcon={true}>{__('Unlock hover display, below image position, and vertical align with Premium version.', 'b-carousel-block')}</Notice>
 		</PanelBody>
