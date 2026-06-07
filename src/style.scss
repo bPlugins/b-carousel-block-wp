@@ -1,0 +1,121 @@
+$primaryColor: #146ef5;
+
+.wp-block-bicb-carousel {
+	display: flex;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.bicbCarousel {
+		.carouselItem {
+			height: 100%;
+			position: relative;
+
+			.image {
+				width: 100%;
+				height: 100%;
+				display: inline-flex;
+				margin: 0;
+
+				img {
+					width: 100%;
+					max-width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.caption {
+				display: flex;
+
+				a {
+					text-decoration: none;
+				}
+
+				&.onImage {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					padding: 15px;
+
+					&.display-hover {
+						opacity: 0;
+						transition: .15s linear;
+
+						p {
+							opacity: 0;
+							transition: .3s linear;
+						}
+
+						&:hover {
+							opacity: 1;
+
+							p {
+								opacity: 1;
+							}
+						}
+					}
+				}
+
+				&.bellowImage {
+					p {
+						width: 100%;
+					}
+				}
+
+				p {
+					margin: 0;
+				}
+			}
+
+			&.bellowImageCaption {
+				// padding-bottom: 26px;
+				display: flex;
+				flex-direction: column;
+
+				.image {
+					flex: 1;
+				}
+			}
+		}
+
+		&.default {
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			max-width: 100%;
+
+			.swiper-slide {
+				height: inherit;
+			}
+
+			.carouselItem {
+				width: 100%;
+				display: inline-block;
+
+				.image {
+					justify-content: center;
+				}
+			}
+
+			.swiper-pagination {
+				.swiper-pagination-bullet {
+					border-radius: 50%;
+
+					&:focus {
+						outline: 0;
+					}
+				}
+			}
+
+			.swiper-button-next:after,
+			.swiper-button-prev:after {
+				font-weight: bold;
+			}
+		}
+	}
+}
