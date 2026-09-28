@@ -1,9 +1,9 @@
-=== Carousel Block – Responsive Image and Content Carousel ===
+=== Carousel Block – Showcase Images in Elegant Sliding Displays ===
 Contributors: bplugins, abuhayat, charlescormier, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image slider, logo carousel, client logo slider, Gutenberg block
 Requires at least: 6.5
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 1.2.3
 Requires PHP: 7.4
 License: GPLv3 or later
@@ -13,10 +13,12 @@ Create stunning carousels effortlessly with the Carousel Block. Showcase your im
 
 == Description ==
 
-👉 [Plugin Demo](https://bplugins.com/products/b-carousel-block/#demos) | [Documentation](https://bplugins.com/docs/b-carousel-block/) | [Get Pro Version](https://bplugins.com/products/b-carousel-block/pricing) 👈
+👉 [Plugin Demo](https://bplugins.com/products/b-carousel-block/#demos) | [Documentation](https://bplugins.com/docs/b-carousel-block/) | [Get Pro Version](https://bplugins.com/products/b-carousel-block/pricing/) 👈
 
 
 The Carousel Block is a powerful and user-friendly Gutenberg plugin designed to enhance your WordPress website's visual appeal. With this plugin, you can effortlessly create beautiful and responsive carousels directly within the Gutenberg editor. Showcase your images in a sleek and dynamic carousel format that captivates your audience.
+
+https://youtube.com/watch?v=LPbxSxo8eP8
 
 
 = Features =
@@ -243,7 +245,7 @@ This plugin bundles the following third-party JavaScript/PHP libraries.
 * **GitHub:** [https://github.com/bPlugins/freemius-lite-sdk](https://github.com/bPlugins/freemius-lite-sdk)
 * **License:** GPL-2.0-or-later – [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
 * **Purpose:** Provides an opt-in consent form for usage tracking and analytics to help improve the plugin. No data is sent before explicit user consent.
-* **External Services:** Communicates with `api.bplugins.com` (activation events) and `wp.freemius.com` (opt-in processing) only after user opt-in. See [bPlugins Privacy Policy](https://bplugins.com/privacy-policy) and [Freemius Privacy Policy](https://freemius.com/privacy/).
+* **External Services:** Communicates with `api.bplugins.com` (activation events) and `wp.freemius.com` (opt-in processing) only after user opt-in. See [bPlugins Privacy Policy](https://bplugins.com/privacy-policy/) and [Freemius Privacy Policy](https://freemius.com/privacy/).
 
 = bpl-tools =
 * Source / GitHub: https://github.com/bPlugins/bpl-tools

@@ -5,12 +5,12 @@
  * Version: 1.2.3
  * Author: bPlugins
  * Author URI: https://bplugins.com
- * Plugin URI: https://bplugins.com/products/b-carousel-block
+ * Plugin URI: https://bplugins.com/products/b-carousel-block/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: b-carousel-block
  * Requires at least: 6.5
- * Tested up to: 7.0
+ * Tested up to: 7.1
  * Requires PHP: 7.4
  */
 
@@ -87,8 +87,7 @@ if ( function_exists( 'bicb_fs' ) ) {
 					$nonce = isset( $_GET['nonce'] ) ? sanitize_text_field( wp_unslash( $_GET['nonce'] ) ) : '';
 
 					if ( wp_verify_nonce( $nonce, 'bicbCreatePage' ) ) {
-						// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Content is secured by nonce verification and unslashed to preserve Gutenberg block markup.
-						return wp_unslash( $_GET['content'] );
+						return wp_kses_post( wp_unslash( $_GET['content'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 					}
 				}
 				return $content;
@@ -166,7 +165,7 @@ if ( function_exists( 'bicb_fs' ) ) {
 					data-info='<?php echo esc_attr( wp_json_encode( [
 						'version' => BICB_VERSION,
 						'adminUrl' => admin_url(),
-						'nonce' => wp_create_nonce( 'bicbCreatePage' ),
+						'startUrl' => admin_url( 'post-new.php?post_type=page&title=' . rawurlencode( 'Carousel Block' ) . '&content=' . rawurlencode( '<!-- wp:bicb/carousel /-->' ) . '&nonce=' . wp_create_nonce( 'bicbCreatePage' ) ),
 						'licenseActiveNonce' => wp_create_nonce( 'bPlLicenseActivation' )
 					] ) ); ?>'
 				></div>

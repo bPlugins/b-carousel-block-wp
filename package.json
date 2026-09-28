@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": " Create stunning responsive carousels effortlessly.",
 	"author": "Wasek Bellah",
-	"license": "ISC",
+	"license": "GPL-3.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
 		"lint": "eslint src",

@@ -23,18 +23,12 @@ if ( ! function_exists( 'bicb_fs' ) ) {
 				'type'					=> 'plugin',
 				'public_key'			=> 'pk_a45f62e2b56488230717561f70db4',
 				'is_premium'			=> false,
-				'premium_suffix'		=> 'Pro',
-				'has_premium_version'	=> true,
-				'has_addons'			=> false,
-				'has_paid_plans'		=> true,
 				'menu'					=> [
 					'slug'			=> 'carousel-block',
 					'first-path'	=> 'tools.php?page=carousel-block',
 					'parent'		=> [
 						'slug'	=> 'tools.php'
-					],
-					'contact'		=> false,
-					'support'		=> false
+					]
 				]
 			] );
 		}

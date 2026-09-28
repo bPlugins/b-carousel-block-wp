@@ -3,6 +3,8 @@ import { __ } from '@wordpress/i18n';
 import { withSelect } from '@wordpress/data';
 import { useBlockProps } from '@wordpress/block-editor';
 
+import useIframeAssetSync from '../../../../bpl-tools/hooks/useIframeAssetSync';
+
 import Settings from './Settings/Settings';
 import Style from '../Common/Style';
 import Carousel from '../Common/Carousel';
@@ -17,6 +19,8 @@ const Edit = props => {
 	const attributes = { ...attr, layout };
 
 	const blockProps = useBlockProps();
+
+	useIframeAssetSync(['bicb-carousel-editor-style-css', 'bicb-carousel-style-css']);
 
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [rendered, setRendered] = useState(true);

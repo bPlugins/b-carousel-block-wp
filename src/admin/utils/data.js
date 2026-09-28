@@ -5,7 +5,7 @@ import { gutenbergTabIcon } from './icons';
 const slug = 'b-carousel-block';
 
 export const dashboardInfo = (info) => {
-	const { version, isPremium, hasPro, nonce, licenseActiveNonce, adminUrl = '' } = info;
+	const { version, isPremium, hasPro, startUrl, licenseActiveNonce, adminUrl = '' } = info;
 
 	const proSuffix = isPremium ? ' Pro' : '';
 
@@ -23,7 +23,7 @@ export const dashboardInfo = (info) => {
 			logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
 			banner: `https://ps.w.org/${slug}/assets/banner-772x250.png`,
 			thumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}.png`,
-			proThumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}-pro.png`,
+			// proThumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}-pro.png`,
 			video: 'https://www.youtube.com/watch?v=BHxDuVF2M7E',
 			isYoutube: true
 		},
@@ -41,7 +41,7 @@ export const dashboardInfo = (info) => {
 		licenseActiveNonce,
 		startButton: {
 			label: 'Start Now',
-			url: `wp-admin/post-new.php?post_type=page&title=Carousel Block&content=<!-- wp:bicb/carousel /-->&nonce=${nonce}`
+			url: startUrl
 		}
 	}
 }
